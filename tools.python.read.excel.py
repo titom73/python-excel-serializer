@@ -71,7 +71,7 @@ def download_file( remote_file=None, verbose=False):
 if __name__ == "__main__":
 
 	### CLI Option parser:
-	parser = argparse.ArgumentParser(description="EVPN/VXLAN Topology builder ")
+	parser = argparse.ArgumentParser(description="Excel to text file ")
 	parser.add_argument('-e', '--excel', help='Input Excel file',default=None)
 	parser.add_argument('-u', '--url', help='URL for remote Excel file',default=None)
 	parser.add_argument('-s', '--sheet', help='Excel sheet tab',default="Sheet1")

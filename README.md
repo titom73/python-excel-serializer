@@ -8,6 +8,14 @@ Repository introduced a way to convert data from an Excel file to YAML structure
 
 # Python Excel Reader
 
+## Installation
+
+To start working with this script, you have to installa dependencies with following command:
+
+```
+pip install -r requirements.txt
+```
+
 ## Description
 
 __Script name:__ [`tools.python.read.excel.py`](tools.python.read.excel.py)
