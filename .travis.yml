@@ -1,0 +1,9 @@
+language: python
+cache: pip
+python: 
+  - "2.7"
+script:
+- cp .ci/inetsix-test.py .
+- pip install -r requirements.txt
+- python tools.python.read.excel.py -h
+- python tools.python.read.excel.py -e ci/excel-demo.xlsx -s test -m table -n 3
