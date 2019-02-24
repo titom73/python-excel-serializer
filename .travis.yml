@@ -9,6 +9,5 @@ install:
   - pip install git+https://github.com/titom73/python-excel-serializer.git
 
 script:
-  - cd ci/
   - inetsix-excel-to-template -h
   - inetsix-excel-to-template -e ci/excel-demo.xlsx -s test -m table -n 3
