@@ -1,0 +1,61 @@
+--- bin/inetsix-excel-to-template	(original)
++++ bin/inetsix-excel-to-template	(refactored)
+@@ -37,7 +37,7 @@
+ import sys
+ import os.path
+ import yaml
+-import urllib2
++import urllib.request, urllib.error, urllib.parse
+ import inetsix
+ from inetsix.excel import ExcelSerializer
+ from jinja2 import Template
+@@ -68,11 +68,11 @@
+ 
+     # Download Excel file from Webserver:
+     if options.url is not None:
+-        print " * Downloading Excel file from "+ options.url
++        print(" * Downloading Excel file from "+ options.url)
+         options.excel = inetsix.download_file(remote_file= options.url, verbose= options.verbose)
+ 
+     # Serialize EXCEL file
+-    print " * Reading excel file: "+options.excel
++    print(" * Reading excel file: "+options.excel)
+     table = ExcelSerializer(excel_path=options.excel)
+     if options.mode == "table":
+         table.serialize_table( sheet=options.sheet, nb_columns=int(options.nb_columns))
+@@ -82,19 +82,19 @@
+         sys.exit("Error: unsuported serializer mode")
+ 
+     if options.verbose is True:
+-        print " ** Debug Output **"
++        print(" ** Debug Output **")
+         if table.get_yaml(sheet=options.sheet) is None:
+-            print "    -> Sheet has not been found in the structure"
++            print("    -> Sheet has not been found in the structure")
+         else:
+-            print yaml.safe_dump(table.get_yaml(sheet=options.sheet), encoding='utf-8', allow_unicode=True)
+-        print " ** Debug Output **"
++            print(yaml.safe_dump(table.get_yaml(sheet=options.sheet), encoding='utf-8', allow_unicode=True))
++        print(" ** Debug Output **")
+ 
+     # Jinja2 template file.
+     # Open JINJA2 file as a template
+     if options.template is not None and options.output is not None:
+-        print " * Template rendering"
+-        print "    > Use template: "+ options.template
+-        print "    > Output file: "+ options.output
++        print(" * Template rendering")
++        print("    > Use template: "+ options.template)
++        print("    > Output file: "+ options.output)
+ 
+         with open( options.template ) as t_fh:
+             t_format = t_fh.read()
+@@ -105,6 +105,6 @@
+         confFile.close()
+     else:
+         if table.get_yaml(sheet=options.sheet) is None:
+-            print "    -> Sheet has not been found in the structure"
++            print("    -> Sheet has not been found in the structure")
+         else:
+-            print yaml.safe_dump(table.get_yaml_all(), encoding='utf-8', allow_unicode=True)
++            print(yaml.safe_dump(table.get_yaml_all(), encoding='utf-8', allow_unicode=True))
