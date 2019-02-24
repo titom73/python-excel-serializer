@@ -12,13 +12,14 @@ Repository introduced a way to convert data from an Excel file to YAML structure
 
 To start working with this script, you have to installa dependencies with following command:
 
-```
-pip install -r requirements.txt
+```shell
+$ pip install -r requirements.txt
+$ python bin/inetsix-excel-to-template -h
 ```
 
 ## Description
 
-__Script name:__ [`tools.python.read.excel.py`](tools.python.read.excel.py)
+__Script name:__ [`bin/inetsix-excel-to-template`](bin/inetsix-excel-to-template)
 
 __Supported features__:
 
@@ -29,7 +30,7 @@ __Supported features__:
 - Jinja2 engine to render file in any text format.
 
 ```shell
-python python-tools/tools.python.read.excel.py -h
+python bin/inetsix-excel-to-template -h
 usage: tools.python.read.excel.py [-h] [-e EXCEL] [-u URL] [-s SHEET]
                                   [-m MODE] [-n NB_COLUMNS] [-t TEMPLATE]
                                   [-o OUTPUT] [-v]
