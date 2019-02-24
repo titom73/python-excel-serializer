@@ -1,5 +1,7 @@
 # Excel to YAML converter
 
+[![Build Status](https://travis-ci.org/titom73/python-excel-serializer.svg?branch=master)](https://travis-ci.org/titom73/python-excel-serializer)
+
 Script provides a mechanism to extract information from any Excel sheet and create a text file with any structure. Transformation is based by using 
 
 ## Description
@@ -15,6 +17,12 @@ To start working with this script, you have to installa dependencies with follow
 ```shell
 $ pip install -r requirements.txt
 $ python bin/inetsix-excel-to-template -h
+```
+
+Or you can use `pip` to install script in your `$PATH`
+
+```shell
+$ pip install git+https://github.com/titom73/python-excel-serializer.git
 ```
 
 ## Description
