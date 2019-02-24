@@ -1,5 +1,4 @@
 colorful==0.3.7
-ansible
 junos-eznc==2.1.7
 netaddr==0.7.19
 jxmlease==1.0.1
